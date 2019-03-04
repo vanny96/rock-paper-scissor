@@ -11,10 +11,49 @@
                 <li>About Me</li>
             </ul>
         </header>
+        <div class="title">
+            <h1>Let's Play:</h1><br>
+            <h2>Rock, Paper, Scissor</h2>
+        </div>
         <div class="grid">
             <div class="box a"></div>
             <div class="box b"></div>
             <div class="box c"></div>
         </div>
+        <script>
+            let buttons = document.querySelectorAll("div.box");
+            let rock = buttons[0];
+            let paper = buttons[1];
+            let scissor = buttons[2];
+
+            let play = (hand) => {
+                let randomNumber = Math.floor(Math.random()*3);
+                if(randomNumber == 0){
+                    if(hand == "rock"){
+                        draw();
+                    } else if (hand == "paper"){
+                        win();
+                    } else if (hand == "scissor"){
+                        lose();
+                    }
+                } else if (randomNumber == 1){
+                    if(hand == "rock"){
+                        lose();
+                    } else if (hand == "paper"){
+                        draw();
+                    } else if (hand == "scissor"){
+                        win();
+                    }
+                } else if (randomNumber == 2){
+                    if(hand == "rock"){
+                        win();
+                    } else if (hand == "paper"){
+                        lose();
+                    } else if (hand == "scissor"){
+                        draw();
+                    }
+                }
+            }
+        </script>
     </body>
 </html>
