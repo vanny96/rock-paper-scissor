@@ -20,14 +20,18 @@
             <div class="box b"><img src="images/paper.png"></div>
             <div class="box c"><img src="images/scissor.png"></div>
         </div>
+        <div class="result">
+            <h2>Choose one!</h2>
+        </div>
         <div class="spans">
             <span class="player">Your Play!</span>
             <span class="opposer">PC's Play!</span>
         </div>
         <div class="grid second">
-            <div class="box d"><img class="chosenPlay"></div>
-            <div class="box e"><img class="randomPlay"></div>
+            <div class="box d"><img src="images/blank.png" class="chosenPlay"></div>
+            <div class="box e"><img src="images/blank.png" class="randomPlay"></div>
         </div>
+        
         <script>
             let buttons = document.querySelectorAll("div.box");
             let rock = buttons[0];
@@ -36,6 +40,8 @@
 
             let yourHand = document.querySelector("img.chosenPlay");
             let enemyHand = document.querySelector("img.randomPlay");
+
+            let result = document.querySelectorAll("h2")[1];
 
             let play = (hand) => {
                 let randomNumber = Math.floor(Math.random()*3);
@@ -86,12 +92,15 @@
 
             function win(){
                 console.log("Victory!");
+                result.textContent = "Hai vinto!"
             }
             function draw(){
                 console.log("Close one!");
+                result.textContent = "Riprova ancora!"
             }
             function lose(){
                 console.log("That's too bad");
+                result.textContent = "Hai perso!"
             }
 
             rock.onclick = function(){play("rock");}

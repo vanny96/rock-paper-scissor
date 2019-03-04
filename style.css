@@ -39,23 +39,20 @@ header li:hover{
 
 .first{
     grid-template: 200px / 1fr 1fr 1fr;
-    background-color: #E8E8E8;
 }
 
 .second {
     margin-top: 0px;
-    grid-template: 300px / 1fr 1fr;
-    background-color: #E8E8E8;
-}
+    width: 50%;
+    grid-template: 280px / 1fr 1fr;
 
-.grid .box{
-    border: 1px solid black;
 }
 
 .box img {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    border: none;
 }
 
 
@@ -63,6 +60,13 @@ body{
     background-color:#27292b;
     color: white;
     margin: 0px;
+}
+
+.result {
+    margin-top: 50px;
+}
+.result h2 {
+    text-align: center;
 }
 
 .spans {
@@ -73,5 +77,5 @@ body{
 
 .spans .player , .opposer {
     display: inline-block;
-    margin: auto 150px;
+    margin: auto 120px;
 }
