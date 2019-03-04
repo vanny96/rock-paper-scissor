@@ -15,16 +15,27 @@
             <h1>Let's Play:</h1><br>
             <h2>Rock, Paper, Scissor</h2>
         </div>
-        <div class="grid">
+        <div class="grid first">
             <div class="box a"></div>
             <div class="box b"></div>
             <div class="box c"></div>
+        </div>
+        <div class="spans">
+            <span class="player">Your Play!</span>
+            <span class="opposer">PC's Play!</span>
+        </div>
+        <div class="grid second">
+            <div class="box d"></div>
+            <div class="box e"></div>
         </div>
         <script>
             let buttons = document.querySelectorAll("div.box");
             let rock = buttons[0];
             let paper = buttons[1];
             let scissor = buttons[2];
+
+            let yourHand = buttons[3];
+            let enemyHand = buttons[4];
 
             let play = (hand) => {
                 let randomNumber = Math.floor(Math.random()*3);
@@ -54,6 +65,21 @@
                     }
                 }
             }
+
+            function win(){
+                console.log("Victory!");
+            }
+            function draw(){
+                console.log("Close one!");
+            }
+            function lose(){
+                console.log("That's too bad");
+            }
+
+            rock.onclick = function(){play("rock");}
+            paper.onclick = function(){play("paper");}
+            scissor.onclick = function(){play("scissor");}
+
         </script>
     </body>
 </html>

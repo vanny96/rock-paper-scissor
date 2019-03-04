@@ -35,11 +35,17 @@ header li:hover{
     display: grid;
     width: 60%;
     margin: 60px auto 0 auto;
-    grid-template: 200px / 1fr 1fr 1fr;
-    grid-auto-flow: row;
-    grid-auto-rows: 200px;
-    background-color: #E8E8E8;
+}
 
+.first{
+    grid-template: 200px / 1fr 1fr 1fr;
+    background-color: #E8E8E8;
+}
+
+.second {
+    margin-top: 0px;
+    grid-template: 300px / 1fr 1fr;
+    background-color: #E8E8E8;
 }
 
 .grid .box{
@@ -50,4 +56,15 @@ body{
     background-color:#27292b;
     color: white;
     margin: 0px;
+}
+
+.spans {
+    width: 100%;
+    text-align: center;
+    margin: 50px auto 10px auto;
+}
+
+.spans .player , .opposer {
+    display: inline-block;
+    margin: auto 150px;
 }
