@@ -16,17 +16,17 @@
             <h2>Rock, Paper, Scissor</h2>
         </div>
         <div class="grid first">
-            <div class="box a"></div>
-            <div class="box b"></div>
-            <div class="box c"></div>
+            <div class="box a"><img src="images/rock.png"></div>
+            <div class="box b"><img src="images/paper.png"></div>
+            <div class="box c"><img src="images/scissor.png"></div>
         </div>
         <div class="spans">
             <span class="player">Your Play!</span>
             <span class="opposer">PC's Play!</span>
         </div>
         <div class="grid second">
-            <div class="box d"></div>
-            <div class="box e"></div>
+            <div class="box d"><img class="chosenPlay"></div>
+            <div class="box e"><img class="randomPlay"></div>
         </div>
         <script>
             let buttons = document.querySelectorAll("div.box");
@@ -34,11 +34,29 @@
             let paper = buttons[1];
             let scissor = buttons[2];
 
-            let yourHand = buttons[3];
-            let enemyHand = buttons[4];
+            let yourHand = document.querySelector("img.chosenPlay");
+            let enemyHand = document.querySelector("img.randomPlay");
 
             let play = (hand) => {
                 let randomNumber = Math.floor(Math.random()*3);
+
+                //Assegno le immagini correlate alle scelte
+                if(hand == "rock"){
+                     yourHand.src = "images/rock.png";
+                } else if (hand == "paper"){
+                     yourHand.src = "images/paper.png";
+                } else if (hand == "scissor"){
+                    yourHand.src = "images/scissor.png";
+                }
+                if(randomNumber == 0){
+                    enemyHand.src = "images/rock.png";
+                } else if (randomNumber == 1){
+                    enemyHand.src = "images/paper.png";
+                } else if (randomNumber == 2){
+                    enemyHand.src = "images/scissor.png";
+                }
+
+                //Vedo il risultato
                 if(randomNumber == 0){
                     if(hand == "rock"){
                         draw();
